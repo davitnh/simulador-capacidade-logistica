@@ -15,13 +15,7 @@ if (window.parent !== window) {
   let lastHeight = 0;
 
   const sendHeight = (force = false) => {
-    const height = Math.ceil(
-      Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-        rootElement.getBoundingClientRect().bottom,
-      ),
-    );
+    const height = Math.ceil(rootElement.getBoundingClientRect().height);
 
     if (height <= 0 || (!force && height === lastHeight)) return;
 
